@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.list-items {
+  animation: start 0.5s linear forwards;
+  animation-delay: 2s;
+  @apply flex justify-center lg:justify-end pb-2 pt-3 relative hover:scale-110 transition-all opacity-0 text-2xl font-bold z-50
+}
+
+.list-items::after {
+  content: "";
+  height: 1px;
+  width: 2%;
+  background: #fff;
+  position: absolute;
+  bottom: 0%;
+
+  opacity: 0;
+  animation: start 0.5s linear forwards;
+  animation-delay: 2s;
+}
+
+@keyframes start {
+  0% {
+
+    width: 2%;
+    opacity: 0;
+
+  }
+
+  100% {
+
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.outer {
+  animation: rotate-clock 2s linear infinite;
+  animation-delay: 3s;
+}
+
+.inner {
+  animation: rotate-anticlock 2s linear infinite;
+  animation-delay: 3s;
+}
+
+.main img {
+  @apply bg-white hover:bg-green-400 scale-105
+}
+
+@keyframes rotate-clock {
+  0% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: 5deg
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes rotate-anticlock {
+  0% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: -5deg
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+.hoverBG {
+  stroke: 2px;
+  @apply flex items-center justify-center text-5xl font-bold md:text-8xl
+}
+
+
+.list {
+  box-shadow: 2px 2px 15px #000;
+
+}
+
+.hoverBG h1 {
+  transform: rotateZ(-15deg);
+  animation: start 0.5s linear forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
